@@ -1,0 +1,40 @@
+$dark: #10251c;
+$dark-l: #22362d;
+$dark-ll: #999999;
+$light: #ffffff;
+$success:#426750;
+$daily-card:#417444;
+// Primary
+$pri: #e7e0d6;
+$pri-l: #f5f0ea;
+$pri-ll: #f7f4f0;
+$pri-d: #a1917d;
+$pri-dd: #bbb4ac;
+$pri-ll: #f7f4f0;
+.truncation-clamp {
+  line-height: 20px;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+
+  $sizes: 1, 2, 3, 4, 5;
+  @each $size in $sizes {
+    &.clamp-#{$size} {
+      -webkit-line-clamp: #{$size};
+      -moz-line-clamp: #{$size};
+      -ms-line-clamp: #{$size};
+      line-clamp: #{$size};
+    }
+  }
+}
+$sizes: 1, 2, 3, 4, 5, 6;
+@each $size in $sizes {
+  .text-h#{$size} {
+    font-family: "iransansNum-regular" !important;
+  }
+}
+

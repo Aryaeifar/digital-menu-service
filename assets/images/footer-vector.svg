@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="171.2" height="77.042" viewBox="0 0 171.2 77.042">
+  <defs>
+    <filter id="Path_3" x="0" y="0" width="171.2" height="77.042" filterUnits="userSpaceOnUse">
+      <feOffset dy="-7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="footer-vector" transform="translate(30 37)">
+    <g id="Shape_42" transform="translate(0 0)">
+      <g id="Shape_42-2">
+        <g transform="matrix(1, 0, 0, 1, -30, -37)" filter="url(#Path_3)">
+          <path id="Path_3-2" data-name="Path 3" d="M120.8,2.1H9.6c25.962.463,35.381,17.042,55.3,17.042C85.282,19.142,93.808,2.66,120.8,2.1Z" transform="translate(20.4 34.9)" fill="#0f241b" fill-rule="evenodd"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

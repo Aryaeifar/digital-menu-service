@@ -435,6 +435,7 @@ const breakpoints = ref({
                       alt=""
                       class="rounded-lg aspect-ratio-1x1"
                       style="width: 70px; height: 70px"
+                      role="button"
                     />
                     <div class="ps-3 w-100">
                       <span
@@ -556,6 +557,7 @@ const breakpoints = ref({
                       alt=""
                       class="rounded-lg aspect-ratio-1x1"
                       style="width: 70px; height: 70px"
+                      role="button"
                     />
                     <div class="ps-3 w-100">
                       <span

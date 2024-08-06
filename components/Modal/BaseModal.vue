@@ -23,17 +23,37 @@ const menu_popup_titleColor = ref(null);
 const menu_popup_descriptionColor = ref(null);
 
 onMounted(() => {
-  menu_popup_backgroundColor.value = response.value?.menu_popup_background_color;
+  menu_popup_backgroundColor.value =
+    response.value?.menu_popup_background_color;
   menu_popup_titleColor.value = response.value?.menu_popup_title_color;
-  menu_popup_descriptionColor.value = response.value?.menu_popup_description_color;
+  menu_popup_descriptionColor.value =
+    response.value?.menu_popup_description_color;
 });
 const currentSlide = ref(0);
 const slideTo = (val) => {
   currentSlide.value = val;
 };
+
+const mainSettings = {
+  dir: "rtl",
+  snapAlign: "center",
+  breakpoints: {
+    1024: {
+      itemsToShow: 3,
+      snapAlign: "center",
+    },
+  },
+};
 const settings = {
   dir: "rtl",
   snapAlign: "center",
+  itemsToShow: 4,
+  breakpoints: {
+    1024: {
+      itemsToShow: 8,
+      snapAlign: "center",
+    },
+  },
 };
 
 const activeDesc = ref(true);
@@ -41,7 +61,10 @@ const activeDesc = ref(true);
 
 <template>
   <v-dialog v-model="dialog" class="base-modal">
-    <v-card class="base-modal-card rounded-xl pa-5" :style="{ backgroundColor: menu_popup_backgroundColor }">
+    <v-card
+      class="base-modal-card rounded-xl pa-5"
+      :style="{ backgroundColor: menu_popup_backgroundColor }"
+    >
       <div
         v-if="item.description"
         :class="[
@@ -67,7 +90,7 @@ const activeDesc = ref(true);
       <div class="">
         <Carousel
           class="mb-3"
-          v-bind="settings"
+          v-bind="mainSettings"
           id="gallery"
           :items-to-show="1"
           :wrap-around="false"
@@ -86,7 +109,6 @@ const activeDesc = ref(true);
         </Carousel>
         <Carousel
           id="thumbnails"
-          :items-to-show="4"
           v-model="currentSlide"
           ref="carousel"
           v-bind="settings"
@@ -105,12 +127,15 @@ const activeDesc = ref(true);
       </div>
       <div v-if="item.description">
         <div class="food-desc mt-3" v-if="activeDesc">
-          <div class="d-flex align-center mb-3" :style="{ color: menu_popup_descriptionColor }">
+          <div
+            class="d-flex align-center mb-3"
+            :style="{ color: menu_popup_descriptionColor }"
+          >
             <img src="@/assets/images/desc-icon.svg" alt="" class="me-2" />
             توضیحات
           </div>
           <div>
-            <p  :style="{ color: menu_popup_descriptionColor }">
+            <p :style="{ color: menu_popup_descriptionColor }">
               {{ item.description }}
             </p>
           </div>
@@ -133,5 +158,17 @@ const activeDesc = ref(true);
 .v-leave-to {
   opacity: 0;
 }
+@media (min-width: 700px) {
+  .base-modal {
+    max-width: 600px; /* Adjust as needed for lg screens */
+    max-height: 80vh; /* Adjust height for lg screens */
+  }
+}
 
+@media (min-width: 1200px) {
+  .base-modal {
+    max-width: 800px; /* Adjust as needed for xl screens */
+    max-height: 70vh; /* Adjust height for xl screens */
+  }
+}
 </style>

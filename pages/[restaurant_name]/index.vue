@@ -65,7 +65,6 @@ const isActiveIdea = ref(false)
 onMounted(async () => {
   await getPremissions()
   .then((res) => {
-    console.log(res.data.value.data);
     isActiveReserve.value = !!res.data.value.data?.[route.params.restaurant_name]?.modules?.reserve
   })
   // const { data: reserveData } = await useFetch('https://www.menuly.vip/api/v2/permissions')

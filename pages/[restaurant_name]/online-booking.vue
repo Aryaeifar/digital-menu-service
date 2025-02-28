@@ -125,8 +125,8 @@ const onSubmit = async () => {
             $flashMsg.success({
                 text: 'رزرو شما با موفقیت ثبت شد',
               });
-            localStorage.setItem('reserveInfo', JSON.stringify(data.data.value))
-            navigateTo('/' + route.params.restaurant_name + '/online-booking-result')
+            // localStorage.setItem('reserveInfo', JSON.stringify(data.data.value))
+            // navigateTo('/' + route.params.restaurant_name + '/online-booking-result')
           } else {
              $flashMsg.error({
                 text: 'خخطایی رخ داده است',

@@ -17,11 +17,13 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@mdi/font": "^7.4.47",
+    "@pinia/nuxt": "^0.10.1",
     "@smartweb/vue-flash-message": "^1.0.0-alpha.12",
     "@vuelidate/core": "^2.0.3",
     "@vuelidate/validators": "^2.0.4",
     "@vueuse/core": "^10.11.0",
     "hemend-js-library": "https://github.com/HemendCo/js-library/tarball/main",
+    "pinia": "^3.0.1",
     "vue-gtag-next": "^1.14.0",
     "vue3-carousel": "^0.3.1",
     "vue3-persian-datetime-picker": "^1.2.2",

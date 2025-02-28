@@ -35,6 +35,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify", { rtl: true }],
   },
+  modules: [
+    '@pinia/nuxt'
+  ],
   css: [
     "@/assets/scss/app.scss",
     "vuetify/lib/styles/main.sass",

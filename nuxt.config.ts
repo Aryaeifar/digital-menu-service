@@ -1,4 +1,3 @@
-
 import 'hemend-js-library/dist/require'
 import { Dirent } from 'fs'
 
@@ -20,44 +19,34 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: false,
   srcDir: __dirname,
+
   app: {
     baseURL: "/",
     buildAssetsDir: themeAssetsUrl,
     layoutTransition: { name: "layout", mode: "out-in" },
     pageTransition: { name: "page", mode: "out-in" },
   },
+
   link: [
     {
       rel: "manifest",
       href: "@/assets/manifest.json",
     },
   ],
+
   build: {
     transpile: ["vuetify", { rtl: true }],
   },
+
   modules: [
     '@pinia/nuxt'
   ],
+
   css: [
     "@/assets/scss/app.scss",
     "vuetify/lib/styles/main.sass",
     "@mdi/font/css/materialdesignicons.min.css",
   ],
-  runtimeConfig: {
-    public: {
-      storage: {
-        prefix: "restaurant",
-        driver: "local",
-        ttl: 0,
-      },
-      flashMessage: {
-        rtl: true,
-        time: 1000,
-        strategy: "multiple",
-        position: "left bottom",
-      },
-    },
-  },
 
   // hooks: {
   //   close(nuxt: any) {
@@ -71,7 +60,6 @@ export default defineNuxtConfig({
   //         nuxt.options.nitro?.output?.publicDir ||
   //         nuxt.options.nitro?.output?.dir ||
   //         join(__dirname, ".output", "public");
-
   //       removeSync(publicThemeDir);
   //       copySync(join(distDir, themeAssetsPath), publicThemeAssetsDir);
   //       copySync(join(distDir, "200.html"), join(publicThemeDir, "index.html"));
@@ -97,18 +85,13 @@ export default defineNuxtConfig({
   //         }
   //       );
   //       removeSync(distDir);
-
   //       if (nuxt.options.app.baseURL !== "/") {
   //         let baseUrl = nuxt.options.app.baseURL;
-
   //         let firstChar = baseUrl.substring(0, 1);
-
   //         if (firstChar === "/") {
   //           baseUrl = baseUrl.substring(1);
   //         }
-
   //         let content = readFileSync(indexFilePath, "utf-8");
-
   //         let re = new RegExp(`${baseUrl}/?themes/`, "g");
   //         content = content.replace(re, `themes/`);
   //         writeFileSync(indexFilePath, content);
@@ -116,5 +99,21 @@ export default defineNuxtConfig({
   //     }
   //   },
   // },
+  runtimeConfig: {
+    public: {
+      storage: {
+        prefix: "restaurant",
+        driver: "local",
+        ttl: 0,
+      },
+      flashMessage: {
+        rtl: true,
+        time: 1000,
+        strategy: "multiple",
+        position: "left bottom",
+      },
+    },
+  },
+
+  compatibilityDate: "2025-02-28",
 });
- 

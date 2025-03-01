@@ -28,7 +28,7 @@ const middleIconURL = ref(null)
 const rightIconURL = ref(null)
 
 const { data, error } = await useFetch(`https://menuly.vip/api/v2/info?slug=${route.params.restaurant_name}`)
-response.value = data.value.data
+response.value = data?.value?.data
 splash_background.value = "url(" + response.value.image + ")"
 copyright_text.value = response.value.copyright_text
 meta_title.value = response.value.meta_title
@@ -65,7 +65,7 @@ const isActiveIdea = ref(false)
 onMounted(async () => {
   await getPremissions()
   .then((res) => {
-    isActiveReserve.value = !!res.data.value.data?.[route.params.restaurant_name]?.modules?.reserve
+    isActiveReserve.value = !!res?.data?.value.data?.[route.params.restaurant_name]?.modules?.reserve
   })
   // const { data: reserveData } = await useFetch('https://www.menuly.vip/api/v2/permissions')
   // console.log(reserveData.value);

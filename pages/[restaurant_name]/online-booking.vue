@@ -67,19 +67,17 @@ const response = ref([]);
 const logo = ref(null);
 const reserveOptions = ref([]);
 
-const { data, error } = await useFetch(
-  `https://menuly.vip/api/v2/info?slug=${route.params.restaurant_name}`
-);
-response.value = data.value.data;
-logo.value = response.value.logo;
+const { data, error } = await useFetch(`https://menuly.vip/api/v2/info?slug=${route.params.restaurant_name}`);
+response.value = data?.value?.data;
+logo.value = response?.value?.logo;
 
 const { data: optionData, error: optionError } = await useFetch(
   `http://menuly.vip/api/v2/reserve/options?slug=${route.params.restaurant_name}`
 );
-reserveOptions.value = optionData.value.data;
-const maxGuests = ref(reserveOptions.value.guests);
-const salon = ref(reserveOptions.value.salons);
-const subject = ref(reserveOptions.value.subjects);
+reserveOptions.value = optionData?.value?.data;
+const maxGuests = ref(reserveOptions?.value?.guests);
+const salon = ref(reserveOptions?.value?.salons);
+const subject = ref(reserveOptions?.value?.subjects);
 const guestNumber = ref(0);
 
 const increase = () => {
